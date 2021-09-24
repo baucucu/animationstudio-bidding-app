@@ -82,28 +82,19 @@ const HomePage = ({f7route, f7router}) => {
       {list && <List>
         {list.cards.filter(card => {return JSON.stringify(card.labels).includes("Waiting your for input")}).map((card, id) => {return(
           <ListItem
+            mediaList
             key = {id}
             title = {card.name}
           >
+            <div slot="title">Subtitle</div>
+            <div slot="title">Video length | Project payment</div>
             <Countdown  slot="header" date={Date.now() + 10000} />
-            <Block>
-              <p>Project Name</p>
-              <p>Company Name</p>
-              <p>Project delivery due date</p>
-              <p>Video length</p>
-              <p>Project payment</p>
-
-            </Block>
-            {/* <Segmented strong tag="p">
-              <Button outlined active>Before "duedate"</Button>
-              <Button outlined>Later</Button>
-            </Segmented> */}
-            <Block>
+            <Block slot="after">
               <p>When can you deliver?</p>
               <Input type="datetime-local"></Input>
             </Block>
             
-            <Block style={{display:"flex", flexDirection:"row"}}>
+            <Block style={{display:"flex", flexDirection:"row"}} slot="after">
               <Button raised bgColor="green" fill f7="checkmark_alt">Accept</Button>
               <Button style={{marginLeft: "8px"}} color="red" outline>Decline</Button>
             </Block>
