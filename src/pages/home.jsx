@@ -6,7 +6,8 @@ import {
   Block,
   List, 
   ListItem,
-  Segmented
+  Segmented,
+  Input
 } from 'framework7-react';
 
 
@@ -84,13 +85,14 @@ const HomePage = ({f7route, f7router}) => {
             key = {id}
             title = {card.name}
           >
-            <Countdown slot="header" date={Date.now() + 10000} />
-            <Segmented strong strong tag="p">
+            <Countdown  date={Date.now() + 10000} />
+            <Segmented strong tag="p">
+              <Button outlined active>Button</Button>
               <Button outlined>Button</Button>
               <Button outlined>Button</Button>
-              <Button active outlined>Active</Button>
             </Segmented>
-            <Block slot="after">
+            <Input type="datetime-local"></Input>
+            <Block style={{display:"flex", flexDirection:"row"}}>
               <Button raised bgColor="green" fill f7="checkmark_alt">Accept</Button>
               <Button color="red">Decline</Button>
             </Block>
