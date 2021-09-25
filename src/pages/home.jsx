@@ -86,13 +86,13 @@ const HomePage = ({f7route, f7router}) => {
             key = {id}
             // title = {card.name}
           >
+            <Countdown  slot="header" date={Date.now() + 10000} />
             <Block slot="title">
               <div >{card.name}</div>
               <div >Company name</div>
               <div >Video length | Project payment</div>
             </Block>
-            <Countdown  slot="header" date={Date.now() + 10000} />
-            <Block slot="after">
+            <Block slot="after" style={{marginRight: 50}}>
               <p>When can you deliver?</p>
               <Input type="datetime-local"></Input>
             </Block>
