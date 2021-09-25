@@ -79,22 +79,24 @@ const HomePage = ({f7route, f7router}) => {
       <Block strong>
         <p>Board ID: {f7route.query.board}</p>
       </Block>
-      {list && <List>
+      {list && <List style={{alignItems: 'center'}}>
         {list.cards.filter(card => {return JSON.stringify(card.labels).includes("Waiting your for input")}).map((card, id) => {return(
           <ListItem
             mediaList
             key = {id}
-            title = {card.name}
+            // title = {card.name}
           >
-            <div slot="title">Subtitle</div>
-            <div slot="title">Video length | Project payment</div>
+            <Block slot="title">
+              <div >{card.name}</div>
+              <div >Company name</div>
+              <div >Video length | Project payment</div>
+            </Block>
             <Countdown  slot="header" date={Date.now() + 10000} />
             <Block slot="after">
               <p>When can you deliver?</p>
               <Input type="datetime-local"></Input>
             </Block>
-            
-            <Block style={{display:"flex", flexDirection:"row"}} slot="after">
+            <Block style={{display:"flex", flexDirection:"row", alignItems: "center"}} slot="after">
               <Button raised bgColor="green" fill f7="checkmark_alt">Accept</Button>
               <Button style={{marginLeft: "8px"}} color="red" outline>Decline</Button>
             </Block>
