@@ -86,19 +86,20 @@ const HomePage = ({f7route, f7router}) => {
             key = {id}
             // title = {card.name}
           >
-            <Countdown  slot="header" date={Date.now() + 10000} />
+            <Countdown  slot="header" date={Date.now() + 100000} />
             <Block slot="title">
               <div >{card.name}</div>
               <div >Company name</div>
-              <div >Video length | Project payment</div>
+              <div >Video length</div>
+              <div>Project payment</div>
             </Block>
-            <Block slot="after" style={{marginRight: 50}}>
+            <Block slot="after" style={{marginRight: 128}}>
               <p>When can you deliver?</p>
               <Input type="datetime-local"></Input>
             </Block>
             <Block style={{display:"flex", flexDirection:"row", alignItems: "center"}} slot="after">
               <Button raised bgColor="green" fill f7="checkmark_alt">Accept</Button>
-              <Button style={{marginLeft: "8px"}} color="red" outline>Decline</Button>
+              <Button style={{marginLeft: "24px"}} color="red" outline>Decline</Button>
             </Block>
           </ListItem>
         )})}
